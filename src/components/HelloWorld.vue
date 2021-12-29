@@ -1,4 +1,12 @@
 <template>
+  <div>
+    <div class="card">
+      <div class="card-body">Header</div>
+      <div class="row">
+        <div class="col-3"><button class="btn btn-primary">Botao teste</button></div>
+      </div>
+    </div>
+  </div>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
