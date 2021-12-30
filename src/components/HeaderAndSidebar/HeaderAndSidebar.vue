@@ -3,6 +3,8 @@
     <nav class="navbar navbar-light bg-light border">
       <div class="container-fluid col-3">
         <a class="navbar-brand" href="#">Logo</a>
+        <fa icon="phone" />
+        <fa icon="id-card" />
       </div>
             <div class="col-6">Espaçamento</div>
             <div class="col-3 text-end">
