@@ -1,3 +1,21 @@
 .teste{
     width: 100%;
 }
+.account-user-avatar{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-right: 40px;
+    margin-left: 20px;
+    user-select: none;
+}
+.account-user-name{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #1ABBB8;
+}
+.acesso-info {
+    font-size: 12px;
+}
