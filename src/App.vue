@@ -1,21 +1,21 @@
 <template>
-  <HeaderAndSidebar />
+  <Header />
 </template>
 
 <script>
-import HeaderAndSidebar from './components/HeaderAndSidebar/HeaderAndSidebar.vue'
+import Header from "./components/HeaderAndSidebar/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HeaderAndSidebar
-  }
-}
+    Header,
+  },
+};
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #app {
-  font-family:'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
