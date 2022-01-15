@@ -1,0 +1,20 @@
+.container-sidebar{
+    border: solid 1px #ccc;
+    height: calc( 100vh - 62px);
+    background-color: #394154;
+    ul{
+        li{
+        background-color: #394154;
+        color: #868996;
+        border: none;
+        cursor: pointer;
+            .icon{
+                font-size: 0.9rem;
+            }
+            span{
+                margin-left: 5px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
