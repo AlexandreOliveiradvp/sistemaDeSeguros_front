@@ -7,7 +7,8 @@
     </ul>
     <ul @click="menuAction()" class="list-group">
       <li class="list-group-item">
-        <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span><fa icon="chevron-down" class="float-end mt-1" />
+        <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span
+        ><fa icon="chevron-down" class="float-end mt-1" />
       </li>
       <div class="register" v-bind:class="drop">
         <li class="list-group-item ps-4">
@@ -33,18 +34,17 @@
 export default {
   name: "Sidebar",
   data() {
-    return{
-      drop: 'display-none'
-    }
+    return {
+      drop: "display-none",
+    };
   },
   methods: {
-    menuAction(){
-      if (this.drop == 'display-none')
-        this.drop = 'display-block'
-/*       else (this.drop == 'display-block')
+    menuAction() {
+      if (this.drop == "display-none") this.drop = "display-block";
+      /*       else (this.drop == 'display-block')
         this.drop = 'display-none' */
-    }
-  }
+    },
+  },
 };
 </script>
 
