@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <header>
     <nav
       class="navbar navbar-light bg-light"
       style="z-index: 2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -40,7 +40,7 @@
         </div>
       </div>
     </nav>
-  </section>
+  </header>
 </template>
 
 <script>
@@ -50,4 +50,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./style.scss"></style>
+<style scoped lang="scss" src="./scss/header.scss"></style>
