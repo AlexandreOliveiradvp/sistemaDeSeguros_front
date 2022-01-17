@@ -5,12 +5,23 @@
         <fa icon="chart-line" class="icon" /><span>Dashboard</span>
       </li>
     </ul>
-    <ul @click="menuAction()" class="list-group">
+    <ul class="list-group">
       <li class="list-group-item">
-        <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span
-        ><fa icon="chevron-down" class="float-end mt-1" />
+        <fa icon="id-card" class="icon" /><span
+          @click="menuActionExp()"
+          class="subtitle"
+          >Cadastro</span
+        ><fa
+          icon="chevron-down"
+          @click="menuActionCol()"
+          class="float-end mt-1"
+          v-bind:class="{ 'rotate-arrow': rotate }"
+        />
       </li>
-      <div class="register" v-bind:class="drop">
+      <div
+        class="register"
+        v-bind:class="{ 'display-none': collected, 'display-block': expanded }"
+      >
         <li class="list-group-item ps-4">
           <span class="arrow">>></span><span>Clientes</span>
         </li>
@@ -35,14 +46,21 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      drop: "display-none",
+      collected: true,
+      expanded: false,
+      rotate: false,
     };
   },
   methods: {
-    menuAction() {
-      if (this.drop == "display-none") this.drop = "display-block";
-      /*       else (this.drop == 'display-block')
-        this.drop = 'display-none' */
+    menuActionExp() {
+      if (this.collected == true) this.collected = false;
+      this.expanded = true;
+      this.rotate = true;
+    },
+    menuActionCol() {
+      this.collected = true;
+      this.expanded = false;
+      this.rotate = false;
     },
   },
 };
