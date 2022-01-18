@@ -6,29 +6,30 @@
       </li>
     </ul>
     <ul class="list-group">
-      <li class="list-group-item" @click="menuActionExp()">
+      <li class="list-group-item" v-on:click="submenu = !submenu" @click="rotateIcon">
         <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span
         ><fa
           icon="chevron-down"
-          @click="menuActionCol()"
-          class="float-end mt-1"
-          v-bind:class="{ 'rotate-arrow': rotate }"
+          class="float-end mt-1 rotate-init"
+          v-bind:class="{ 'rotate-final': rotate }"
         />
       </li>
-      <div
-        class="register"
-        v-bind:class="{ 'display-none': collected, 'display-block': expanded }"
-      >
-        <li class="list-group-item ps-4">
-          <span class="arrow">>></span><span>Clientes</span>
-        </li>
-        <li class="list-group-item ps-4">
-          <span class="arrow">>></span><span>Operadoras</span>
-        </li>
-        <li class="list-group-item ps-4">
-          <span class="arrow">>></span><span>Usuários</span>
-        </li>
-      </div>
+      <transition name="fade">
+        <div
+          class="register"
+          v-if="submenu"
+        >
+          <li class="list-group-item ps-4">
+            <span class="arrow">>></span><span>Clientes</span>
+          </li>
+          <li class="list-group-item ps-4">
+            <span class="arrow">>></span><span>Operadoras</span>
+          </li>
+          <li class="list-group-item ps-4">
+            <span class="arrow">>></span><span>Usuários</span>
+          </li>
+        </div>
+      </transition>
       <li class="list-group-item">
         <fa icon="sign-out-alt" class="icon" /><span>Sair</span>
       </li>
@@ -41,20 +42,15 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      collected: true,
-      expanded: false,
-      rotate: false,
+      submenu: false,
+      rotate: false
     };
   },
   methods: {
-    menuActionExp() {
-      if (this.collected) {
-        this.collected = false;
-        this.expanded = true;
+    rotateIcon() {
+      if (this.rotate == false) {
         this.rotate = true;
       } else {
-        this.collected = true;
-        this.expanded = false;
         this.rotate = false;
       }
     },

@@ -33,14 +33,19 @@
   }
   li:hover {
     color: white;
+    transition: 500ms;
   }
-  .display-none {
-    display: none !important;
+  .rotate-init {
+    transition: 400ms;
   }
-  .display-block {
-    display: block !important;
-  }
-  .rotate-arrow {
+  .rotate-final {
     transform: rotate(180deg);
+    transition: 400ms;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 500ms;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 }
