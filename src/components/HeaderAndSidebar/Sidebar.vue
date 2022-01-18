@@ -6,11 +6,8 @@
       </li>
     </ul>
     <ul class="list-group">
-      <li class="list-group-item">
-        <fa icon="id-card" class="icon" /><span
-          @click="menuActionExp()"
-          class="subtitle"
-          >Cadastro</span
+      <li class="list-group-item" @click="menuActionExp()">
+        <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span
         ><fa
           icon="chevron-down"
           @click="menuActionCol()"
@@ -32,8 +29,6 @@
           <span class="arrow">>></span><span>Usuários</span>
         </li>
       </div>
-    </ul>
-    <ul class="list-group">
       <li class="list-group-item">
         <fa icon="sign-out-alt" class="icon" /><span>Sair</span>
       </li>
@@ -53,14 +48,15 @@ export default {
   },
   methods: {
     menuActionExp() {
-      if (this.collected == true) this.collected = false;
-      this.expanded = true;
-      this.rotate = true;
-    },
-    menuActionCol() {
-      this.collected = true;
-      this.expanded = false;
-      this.rotate = false;
+      if (this.collected) {
+        this.collected = false;
+        this.expanded = true;
+        this.rotate = true;
+      } else {
+        this.collected = true;
+        this.expanded = false;
+        this.rotate = false;
+      }
     },
   },
 };
