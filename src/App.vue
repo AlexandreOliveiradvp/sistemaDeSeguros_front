@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
+    <Header v-if="login_deletion"/>
     <main class="d-flex">
-      <Sidebar />
+      <Sidebar v-if="login_deletion"/>
       <router-view />
     </main>
   </div>
@@ -14,6 +14,11 @@ import Sidebar from "./components/HeaderAndSidebar/Sidebar.vue";
 
 export default {
   name: "App",
+  computed: {
+    login_deletion() {
+        if(this.$route.name == "Login"){return false}else{return true}        
+    }
+  },
   components: {
     Header,
     Sidebar,

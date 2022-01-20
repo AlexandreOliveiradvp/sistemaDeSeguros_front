@@ -12,6 +12,12 @@ npm install
 npm run serve
 ```
 
+### Run Prettier for all files
+
+```
+npx prettier --writte .
+```
+
 ### Compiles and minifies for production
 
 ```
