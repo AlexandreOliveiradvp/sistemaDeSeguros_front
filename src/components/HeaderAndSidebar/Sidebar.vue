@@ -1,9 +1,9 @@
 <template>
   <div class="container-sidebar">
     <ul class="list-group">
-      <li class="list-group-item">
+      <router-link class="link" to="/"><li class="list-group-item">
         <fa icon="chart-line" class="icon" /><span>Dashboard</span>
-      </li>
+      </li></router-link>
     </ul>
     <ul class="list-group">
       <li class="list-group-item" v-on:click="submenu = !submenu" @click="rotateIcon">
@@ -42,8 +42,8 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      submenu: false,
-      rotate: false
+      submenu: true,
+      rotate: true
     };
   },
   methods: {
