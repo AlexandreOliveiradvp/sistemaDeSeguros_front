@@ -3,11 +3,11 @@ import Dashboard from "../views/Dashboard.vue";
 import Clientes from "../views/Clientes.vue";
 import Login from "../views/Login.vue";
 
-var auth = false;
+var auth = true;
 
 const routes = [
   {
-    path: "/",
+    path: "/Dashboard",
     name: "Dashboard",
     component: Dashboard,
     beforeEnter(to, from, next) {
@@ -35,7 +35,7 @@ const routes = [
     },
   },
   {
-    path: "/Login",
+    path: "/",
     name: "Login",
     component: Login
   }

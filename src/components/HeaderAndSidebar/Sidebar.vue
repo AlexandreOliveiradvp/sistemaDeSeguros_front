@@ -1,7 +1,7 @@
 <template>
   <div class="container-sidebar">
     <ul class="list-group">
-      <router-link class="link" to="/"
+      <router-link class="link" to="/Dashboard"
         ><li class="list-group-item">
           <fa icon="chart-line" class="icon" /><span>Dashboard</span>
         </li></router-link
