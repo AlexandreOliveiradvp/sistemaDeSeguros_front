@@ -16,7 +16,7 @@ export default {
   name: "App",
   computed: {
     login_deletion() {
-        if(this.$route.name == "Login"){return false}else{return true}        
+        if(this.$route.name == "Login" || this.$route.name == "404"){return false}else{return true}        
     }
   },
   components: {

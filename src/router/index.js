@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "../../node_modules/vue-router";
 import Dashboard from "../views/Dashboard.vue";
 import Clientes from "../views/Clientes.vue";
 import Login from "../views/Login.vue";
+import NotFound from "../views/404.vue";
 
 var auth = true;
 
@@ -38,6 +39,11 @@ const routes = [
     path: "/",
     name: "Login",
     component: Login
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "404",
+    component: NotFound
   }
 ];
 
