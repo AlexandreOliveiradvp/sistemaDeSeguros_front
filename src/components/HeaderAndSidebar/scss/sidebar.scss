@@ -2,6 +2,10 @@
   border: solid 1px #ccc;
   height: calc(100vh - 62px);
   background-color: #394154;
+  width: 15%;
+  @media screen and (min-width: 1640px) {
+    width: 13%;
+  }
   ul {
     li {
       background-color: #394154;
@@ -31,13 +35,27 @@
       }
     }
   }
+  .link{
+    text-decoration: none;
+  }
+  //Animations class
   li:hover {
     color: white;
+    transition: 500ms;
   }
-  .display-none {
-    display: none;
+  .rotate-init {
+    transition: 400ms;
   }
-  .display-block {
-    display: block;
+  .rotate-final {
+    transform: rotate(180deg);
+    transition: 400ms;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: 80ms;
+    opacity: 0.6;
+  }
+  .fade-enter, .fade-leave-to {
+    transition: 300ms;
+    opacity: 0;
   }
 }

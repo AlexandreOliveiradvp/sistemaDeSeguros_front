@@ -1,6 +1,11 @@
 <template>
-  <Header />
-  <Sidebar />
+  <div>
+    <Header />
+    <main class="d-flex">
+      <Sidebar />
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <script>
