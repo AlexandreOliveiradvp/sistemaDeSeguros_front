@@ -1,18 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import VueRouter from "vue-router";
+import router from "./router";
 
-Vue.use(VueRouter);
 
-const router = new VueRouter({
-  routes: [
-    {
-      path: '/teste',
-      component: dashboard
-    }
-  ]
-})
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -38,4 +29,4 @@ library.add(
   faChevronDown
 );
 
-router,createApp(App).component("fa", FontAwesomeIcon).mount("#app");
+createApp(App).component("fa", FontAwesomeIcon).use(router).mount("#app");
