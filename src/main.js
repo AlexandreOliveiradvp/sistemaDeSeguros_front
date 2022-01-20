@@ -3,8 +3,6 @@ import App from "./App.vue";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import router from "./router";
 
-
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faPhone,

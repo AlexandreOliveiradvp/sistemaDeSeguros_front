@@ -35,7 +35,7 @@
       }
     }
   }
-  .link{
+  .link {
     text-decoration: none;
   }
   //Animations class
@@ -50,11 +50,13 @@
     transform: rotate(180deg);
     transition: 400ms;
   }
-  .fade-enter-active, .fade-leave-active {
+  .fade-enter-active,
+  .fade-leave-active {
     transition: 80ms;
     opacity: 0.6;
   }
-  .fade-enter, .fade-leave-to {
+  .fade-enter,
+  .fade-leave-to {
     transition: 300ms;
     opacity: 0;
   }

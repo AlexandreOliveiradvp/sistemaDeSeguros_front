@@ -1,12 +1,18 @@
 <template>
   <div class="container-sidebar">
     <ul class="list-group">
-      <router-link class="link" to="/"><li class="list-group-item">
-        <fa icon="chart-line" class="icon" /><span>Dashboard</span>
-      </li></router-link>
+      <router-link class="link" to="/"
+        ><li class="list-group-item">
+          <fa icon="chart-line" class="icon" /><span>Dashboard</span>
+        </li></router-link
+      >
     </ul>
     <ul class="list-group">
-      <li class="list-group-item" v-on:click="submenu = !submenu" @click="rotateIcon">
+      <li
+        class="list-group-item"
+        v-on:click="submenu = !submenu"
+        @click="rotateIcon"
+      >
         <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span
         ><fa
           icon="chevron-down"
@@ -15,13 +21,12 @@
         />
       </li>
       <transition name="fade">
-        <div
-          class="register"
-          v-if="submenu"
-        >
-          <router-link class="link" to="/Clientes"><li class="list-group-item ps-4">
-            <span class="arrow">-</span><span>Clientes</span>
-          </li></router-link>
+        <div class="register" v-if="submenu">
+          <router-link class="link" to="/Clientes"
+            ><li class="list-group-item ps-4">
+              <span class="arrow">-</span><span>Clientes</span>
+            </li></router-link
+          >
           <li class="list-group-item ps-4">
             <span class="arrow">-</span><span>Operadoras</span>
           </li>
@@ -43,7 +48,7 @@ export default {
   data() {
     return {
       submenu: true,
-      rotate: true
+      rotate: true,
     };
   },
   methods: {
