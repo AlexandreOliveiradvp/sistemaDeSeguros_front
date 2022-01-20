@@ -19,9 +19,9 @@
           class="register"
           v-if="submenu"
         >
-          <li class="list-group-item ps-4">
+          <router-link class="link" to="/Clientes"><li class="list-group-item ps-4">
             <span class="arrow">-</span><span>Clientes</span>
-          </li>
+          </li></router-link>
           <li class="list-group-item ps-4">
             <span class="arrow">-</span><span>Operadoras</span>
           </li>
