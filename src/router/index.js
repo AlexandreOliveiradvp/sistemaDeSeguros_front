@@ -3,17 +3,30 @@ import Dashboard from "../views/Dashboard.vue";
 import Clientes from "../views/Clientes.vue";
 import Login from "../views/Login.vue";
 import NotFound from "../views/404.vue";
+import Home from "../views/Home.vue";
 
 var auth = true;
 
 const routes = [
   {
-    path: "/Dashboard",
-    name: "Dashboard",
-    component: Dashboard,
+    path: "/",
+    name: "Home",
+    component: Home,
+    children: [
+      {
+        path: "/Dashboard",
+        name: "Dashboard",
+        component: Dashboard,
+      },
+      {
+        path: "/Clientes",
+        name: "Clientes",
+        component: Clientes,
+      },
+    ],
     beforeEnter(to, from, next) {
       if (auth) {
-        next()
+        next();
       } else {
         next({
           name: "Login"
@@ -22,21 +35,7 @@ const routes = [
     }
   },
   {
-    path: "/Clientes",
-    name: "Clientes",
-    component: Clientes,
-    beforeEnter(to, from, next) {
-      if (auth) {
-        next()
-      } else {
-        next({
-          name: "Login"
-        });
-      }
-    },
-  },
-  {
-    path: "/",
+    path: "/Login",
     name: "Login",
     component: Login
   },
