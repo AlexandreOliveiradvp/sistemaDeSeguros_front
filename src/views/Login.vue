@@ -15,6 +15,9 @@
 
                     <div class="mb-4">
                         <label class="form-label">Senha</label>
+                        <router-link class="link" to="/">
+                            <label class="link-label">Esqueceu a senha ?</label>
+                        </router-link>
                         <div class="input-group">
                             <input ref="inputPassword" type="password" class="form-control">
                             <button v-on:click="revealPassword" class="btn btn-outline-secondary" type="button">
@@ -118,6 +121,9 @@
         border: 1px solid #158f8d;
         color: #FFF;
     }
+    .btn-outline-primary:focus{
+        box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
+    }
     .form-label{
         margin-bottom: 0.0rem;
         user-select: none;
@@ -157,5 +163,14 @@
     }
     .link{
         text-decoration: none;
+    }
+    .link-label{
+        cursor: pointer;
+        font-size: 12px;
+        width: 295px;
+        text-align: end;
+    }
+    .link-label:hover{
+        text-decoration: underline;
     }
 </style>
