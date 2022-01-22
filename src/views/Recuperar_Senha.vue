@@ -5,6 +5,7 @@
                 <img class="logo mb-2" width="220" src="../assets/logo.png"/>
                 <span class="version-label" >Versão 1.0.0</span>
 
+                <h4>Recuperar Senha</h4>
                 <span class="descricao-label mb-4" >Insira o seu nome de usuário para soliciar um e-mail de redefinição de senha.</span>
 
                 <div class="form-control border-0">
@@ -80,7 +81,7 @@ export default ({
         font-size: 13px;
         font-weight: 400;
         color: rgb(152, 166, 173);
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         width: 220px;
         text-align: end;
         user-select: none;
