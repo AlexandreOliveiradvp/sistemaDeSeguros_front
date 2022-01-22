@@ -116,6 +116,7 @@
     .btn-outline-primary:hover{
         background-color: #158f8d;
         border: 1px solid #158f8d;
+        color: #FFF;
     }
     .form-label{
         margin-bottom: 0.0rem;
@@ -127,9 +128,6 @@
         border-color: #1ABBB8;
         outline: 0;
         box-shadow: 0 0 0 0.25rem rgb(26 187 184 / 0%);
-    }
-    .btn-outline-secondary:focus {
-        box-shadow: 0 0 0 0.25rem rgb(108 117 125 / 0%);
     }
     .version-label{
         font-family: 'Roboto';
@@ -153,6 +151,9 @@
     } 
     .btn-outline-secondary{
         border: solid 1px #ced4da;
+    }
+    .btn-outline-secondary:focus {
+        box-shadow: 0 0 0 0.25rem rgb(108 117 125 / 0%);
     }
     .link{
         text-decoration: none;
