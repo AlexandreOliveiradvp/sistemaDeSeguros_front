@@ -13,6 +13,8 @@ import {
   faSignOutAlt,
   faArrowRight,
   faChevronDown,
+  faEyeSlash,
+  faEye
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -25,7 +27,9 @@ library.add(
   faQuestionCircle,
   faSignOutAlt,
   faArrowRight,
-  faChevronDown
+  faChevronDown,
+  faEyeSlash,
+  faEye
 );
 
 createApp(App).component("fa", FontAwesomeIcon).use(router).mount("#app");

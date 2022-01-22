@@ -2,16 +2,14 @@
   border: solid 1px #ccc;
   height: calc(100vh - 62px);
   background-color: #394154;
-  width: 15%;
-  @media screen and (min-width: 1640px) {
-    width: 13%;
-  }
+  width: 220px;
   ul {
     li {
       background-color: #394154;
       color: #868996;
       border: none;
       cursor: pointer;
+      user-select: none;
       .icon {
         font-size: 0.9rem;
       }

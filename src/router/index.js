@@ -9,12 +9,12 @@ var auth = true;
 
 const routes = [
   {
-    path: "/",
+    path: "/Home",
     name: "Home",
     component: Home,
     children: [
       {
-        path: "/Dashboard",
+        path: "/",
         name: "Dashboard",
         component: Dashboard,
       },
