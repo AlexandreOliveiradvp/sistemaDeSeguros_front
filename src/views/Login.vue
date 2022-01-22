@@ -15,7 +15,7 @@
 
                     <div class="mb-4">
                         <label class="form-label">Senha</label>
-                        <router-link class="link" to="/">
+                        <router-link class="link" to="/RecuperarSenha">
                             <label class="link-label">Esqueceu a senha ?</label>
                         </router-link>
                         <div class="input-group">
@@ -172,5 +172,11 @@
     }
     .link-label:hover{
         text-decoration: underline;
+    }
+    .btn-outline-secondary{
+        width: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>

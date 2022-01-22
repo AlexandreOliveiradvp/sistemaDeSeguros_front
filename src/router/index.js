@@ -4,6 +4,7 @@ import Clientes from "../views/Clientes.vue";
 import Login from "../views/Login.vue";
 import NotFound from "../views/404.vue";
 import Home from "../views/Home.vue";
+import RecuperarSenha from "../views/Recuperar_Senha.vue";
 
 var auth = true;
 
@@ -38,6 +39,11 @@ const routes = [
     path: "/Login",
     name: "Login",
     component: Login
+  },
+  {
+    path: "/RecuperarSenha",
+    name: "RecuperarSenha",
+    component: RecuperarSenha
   },
   {
     path: "/:pathMatch(.*)*",
