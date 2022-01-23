@@ -14,10 +14,9 @@ import {
   faArrowRight,
   faChevronDown,
   faEyeSlash,
-  faEye
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
 
 library.add(
   faPhone,
