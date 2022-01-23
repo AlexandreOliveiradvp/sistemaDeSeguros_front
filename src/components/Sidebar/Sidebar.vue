@@ -1,6 +1,5 @@
 <template>
   <div class="container-sidebar">
-
     <!-- Dashboard -->
     <ul class="list-group">
       <router-link class="link" to="/"
@@ -12,15 +11,21 @@
 
     <!-- Cadastro -->
     <ul class="list-group">
-
-      <li class="list-group-item" v-on:click="submenu = !submenu" @click="rotateIcon">
+      <li
+        class="list-group-item"
+        v-on:click="submenu = !submenu"
+        @click="rotateIcon"
+      >
         <fa icon="id-card" class="icon" /><span class="subtitle">Cadastro</span>
-        <fa icon="chevron-down" class="float-end mt-1 rotate-init" v-bind:class="{ 'rotate-final': rotate }"/>
+        <fa
+          icon="chevron-down"
+          class="float-end mt-1 rotate-init"
+          v-bind:class="{ 'rotate-final': rotate }"
+        />
       </li>
 
       <transition name="fade">
         <div class="register" v-if="submenu">
-
           <router-link class="link" to="/Clientes">
             <li class="list-group-item ps-4">
               <span>Clientes</span>
@@ -34,7 +39,6 @@
           <li class="list-group-item ps-4">
             <span>Usuários</span>
           </li>
-
         </div>
       </transition>
 
@@ -43,9 +47,7 @@
           <fa icon="sign-out-alt" class="icon" /><span>Sair</span>
         </li>
       </router-link>
-
     </ul>
-
   </div>
 </template>
 

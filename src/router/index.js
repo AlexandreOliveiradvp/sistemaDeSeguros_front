@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "../../node_modules/vue-router";
-import Dashboard from "../views/Dashboard.vue";
-import Clientes from "../views/Clientes.vue";
-import Login from "../views/Login.vue";
-import NotFound from "../views/404.vue";
+import Dashboard from "../views/Dashboard/Dashboard.vue";
+import Clientes from "../views/Clients/Clients.vue";
+import Login from "../views/Login/Login.vue";
+import NotFound from "../views/404/404.vue";
 import Home from "../views/Home.vue";
-import RecuperarSenha from "../views/Recuperar_Senha.vue";
+import RecuperarSenha from "../views/Password_Recovery/Password_Recovery.vue";
 
 var auth = true;
 
@@ -30,26 +30,26 @@ const routes = [
         next();
       } else {
         next({
-          name: "Login"
+          name: "Login",
         });
       }
-    }
+    },
   },
   {
     path: "/Login",
     name: "Login",
-    component: Login
+    component: Login,
   },
   {
     path: "/RecuperarSenha",
     name: "RecuperarSenha",
-    component: RecuperarSenha
+    component: RecuperarSenha,
   },
   {
     path: "/:pathMatch(.*)*",
     name: "404",
-    component: NotFound
-  }
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
