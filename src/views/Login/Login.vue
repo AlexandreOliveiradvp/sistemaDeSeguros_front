@@ -36,11 +36,15 @@
               <button class="btn btn-primary" type="button">Entrar</button>
             </div>
           </router-link>
-          <div class="d-grid gap-2">
-            <button class="btn btn-outline-primary" type="button">
-              Solicitar Acesso
-            </button>
-          </div>
+          
+          <router-link class="link" to="/SolicitarAcesso">
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-primary" type="button">
+                Solicitar Acesso
+              </button>
+            </div>
+          </router-link>
+
         </div>
       </div>
       <footer>2022 © Secure Brasil - secure.com.br</footer>

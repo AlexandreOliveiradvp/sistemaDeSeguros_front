@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: "RecuperarSenha",
+  name: "PasswordRecover",
 };
 </script>
 
