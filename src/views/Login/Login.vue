@@ -38,7 +38,7 @@
           </router-link>
           <div class="d-grid gap-2">
             <button class="btn btn-outline-primary" type="button">
-              Cadastrar
+              Solicitar Acesso
             </button>
           </div>
         </div>
