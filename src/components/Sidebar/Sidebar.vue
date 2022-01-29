@@ -1,5 +1,5 @@
 <template>
-  <div class="container-sidebar">
+  <div class="container-sidebar" v-bind:class="{'sidebar-collected': collected}">
     <!-- Dashboard -->
     <ul class="list-group">
       <router-link class="link" to="/"
@@ -49,6 +49,7 @@
       </router-link>
     </ul>
   </div>
+  <button class="btn btn-primary" @click="collectedSidebar">teste</button>
 </template>
 
 <script>
@@ -58,6 +59,7 @@ export default {
     return {
       submenu: true,
       rotate: true,
+      collected: false,
     };
   },
   methods: {
@@ -68,6 +70,13 @@ export default {
         this.rotate = false;
       }
     },
+    collectedSidebar(){
+      if (this.collected == false){
+        this.collected = true;
+      }else{
+        this.collected = false;
+      }
+    }
   },
 };
 </script>

@@ -9,7 +9,6 @@
           <button
             class="navbar-toggler"
             type="button"
-            onclick="openNav()"
             data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent"
             aria-controls="navbarToggleExternalContent"

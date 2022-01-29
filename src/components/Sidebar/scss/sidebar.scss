@@ -1,8 +1,11 @@
 .container-sidebar {
-  border: solid 1px #ccc;
   height: calc(100vh - 62px);
   background-color: #394154;
-  width: 220px;
+  width: 14%;
+  transition: 500ms;
+  @media screen and (min-width:1480px) {
+    width: 13%;
+  }
   ul {
     li {
       background-color: #394154;
@@ -57,5 +60,11 @@
   .fade-leave-to {
     transition: 300ms;
     opacity: 0;
+  }
+}
+.sidebar-collected{
+  margin-left: -14%;
+  @media screen and (min-width:1480px) {
+    width: 14%;
   }
 }
