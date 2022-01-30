@@ -14,6 +14,7 @@
             aria-controls="navbarToggleExternalContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            @click="mudar"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,8 +44,12 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   name: "Header",
+  methods:{
+    ...mapActions(['mudar'])
+  }
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
