@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import router from "./router";
+import store from './store'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -31,4 +32,4 @@ library.add(
   faEye
 );
 
-createApp(App).component("fa", FontAwesomeIcon).use(router).mount("#app");
+createApp(App).component("fa", FontAwesomeIcon).use(router).use(store).mount("#app");

@@ -1,5 +1,8 @@
 <template>
-  <div class="container-sidebar" v-bind:class="{'sidebar-collected': collected}">
+  <div
+    class="container-sidebar"
+    v-bind:class="{ 'sidebar-collected' : collected}"
+  >
     <!-- Dashboard -->
     <ul class="list-group">
       <router-link class="link" to="/"
@@ -49,17 +52,20 @@
       </router-link>
     </ul>
   </div>
-  <button class="btn btn-primary" @click="collectedSidebar">teste</button>
+  <!-- <button class="btn btn-primary" @click="collectedSidebar">teste</button> -->
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "Sidebar",
+  computed: {
+    ...mapGetters(["collected"]),
+  },
   data() {
     return {
       submenu: true,
       rotate: true,
-      collected: false,
     };
   },
   methods: {
@@ -70,13 +76,13 @@ export default {
         this.rotate = false;
       }
     },
-    collectedSidebar(){
-      if (this.collected == false){
+    /* collectedSidebar() {
+      if (this.collected == false) {
         this.collected = true;
-      }else{
+      } else {
         this.collected = false;
       }
-    }
+    }, */
   },
 };
 </script>
