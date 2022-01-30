@@ -9,7 +9,7 @@
           <div class="mb-3">
             <label class="form-label">Usuário</label>
             <div class="input-group">
-              <input type="text" class="form-control" />
+              <input ref="inputUsername" type="text" class="form-control" />
             </div>
           </div>
 
@@ -31,12 +31,16 @@
             </div>
           </div>
 
-          <router-link class="link" to="/">
-            <div class="d-grid gap-2 mb-2">
-              <button class="btn btn-primary" type="button">Entrar</button>
-            </div>
-          </router-link>
-          
+          <div class="d-grid gap-2 mb-2">
+            <button
+              @click="auth(this.$refs.inputUsername.value, this.$refs.inputPassword.value)"
+              class="btn btn-primary"
+              type="button"
+            >
+              Entrar
+            </button>
+          </div>
+
           <router-link class="link" to="/SolicitarAcesso">
             <div class="d-grid gap-2">
               <button class="btn btn-outline-primary" type="button">
@@ -44,7 +48,6 @@
               </button>
             </div>
           </router-link>
-
         </div>
       </div>
       <footer>2022 © Secure Brasil - secure.com.br</footer>
@@ -68,6 +71,23 @@ export default {
       } else {
         this.$refs.inputPassword.type = "password";
         this.eye = true;
+      }
+    },
+    auth(username, password) {
+      if(username == "" || password == ""){
+        alert("Os campos estao vazios")
+      }else{
+        this.axios
+        .post(`http://localhost:3000/Auth/${username}/${password}`)
+        .then((response) => {
+          console.log(response.data);
+          if(response.data.error){
+            alert("Login Invalido")
+          }else{
+            localStorage.setItem('token', response.data.token);
+            location=('/');
+          }
+        });
       }
     },
   },
