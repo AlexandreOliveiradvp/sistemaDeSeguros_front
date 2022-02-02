@@ -20,6 +20,7 @@
             </router-link>
             <div class="input-group">
               <input ref="inputPassword" type="password" class="form-control" />
+              <!-- <div class="invalid-feedback">Please provide a valid city.</div> -->
               <button
                 v-on:click="revealPassword"
                 class="btn btn-outline-secondary"
@@ -33,7 +34,12 @@
 
           <div class="d-grid gap-2 mb-2">
             <button
-              @click="auth(this.$refs.inputUsername.value, this.$refs.inputPassword.value)"
+              @click="
+                auth(
+                  this.$refs.inputUsername.value,
+                  this.$refs.inputPassword.value
+                )
+              "
               class="btn btn-primary"
               type="button"
             >
@@ -48,6 +54,14 @@
               </button>
             </div>
           </router-link>
+          <div
+            class="alert alert-danger mt-3 text-center"
+            role="alert"
+            ref="error_info"
+            v-bind:class="{ 'd-none': d_none_error }"
+          >
+            {{ msg }}
+          </div>
         </div>
       </div>
       <footer>2022 © Secure Brasil - secure.com.br</footer>
@@ -61,6 +75,8 @@ export default {
   data() {
     return {
       eye: true,
+      d_none_error: true,
+      msg: "",
     };
   },
   methods: {
@@ -74,20 +90,21 @@ export default {
       }
     },
     auth(username, password) {
-      if(username == "" || password == ""){
-        alert("Os campos estao vazios")
-      }else{
+      if (username == "" || password == "") {
+        this.d_none_error = false;
+        this.msg = "Os campos acima devem ser preenchidos!";
+      } else {
         this.axios
-        .post(`http://localhost:3000/Auth/${username}/${password}`)
-        .then((response) => {
-          console.log(response.data);
-          if(response.data.error){
-            alert("Login Invalido")
-          }else{
-            localStorage.setItem('token', response.data.token);
-            location=('/');
-          }
-        });
+          .post(`http://localhost:3000/Auth/${username}/${password}`)
+          .then((response) => {
+            if (response.data.error) {
+              this.d_none_error = false;
+              this.msg = "Tentativa de login inválida!";
+            } else {
+              localStorage.setItem("token", response.data.token);
+              location = "/";
+            }
+          });
       }
     },
   },
