@@ -16,7 +16,9 @@
                 v-bind:class="{ 'is-invalid': invalidUsr }"
                 @click="cleanInfoUsr()"
               />
-              <div class="invalid-feedback"><span class="invalid">{{ msgUsr }}</span></div>
+              <div class="invalid-feedback">
+                <span class="invalid">{{ msgUsr }}</span>
+              </div>
             </div>
           </div>
 
@@ -41,7 +43,9 @@
                 <fa v-if="eye" icon="eye-slash" class="icon" />
                 <fa v-if="!eye" icon="eye" class="icon" />
               </button>
-              <div class="invalid-feedback"><span class="invalid">{{ msgPsw }}</span></div>
+              <div class="invalid-feedback">
+                <span class="invalid">{{ msgPsw }}</span>
+              </div>
             </div>
           </div>
 
@@ -105,20 +109,20 @@ export default {
         this.eye = true;
       }
     },
-    cleanInfoUsr: function (){
+    cleanInfoUsr: function () {
       this.invalidUsr = false;
-      this.msgUsr = '';
+      this.msgUsr = "";
     },
-    cleanInfoPsw: function (){
+    cleanInfoPsw: function () {
       this.invalidPsw = false;
-      this.msgPsw = '';
+      this.msgPsw = "";
     },
     auth(username, password) {
       if (username == "") {
         this.invalidUsr = true;
         this.msgUsr = "Digite seu usuário!";
       }
-      if(password == ""){
+      if (password == "") {
         this.invalidPsw = true;
         this.msgPsw = "Digite sua senha!";
       } else {

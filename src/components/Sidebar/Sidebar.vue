@@ -48,7 +48,6 @@
       <li @click="logout" class="list-group-item">
         <fa icon="sign-out-alt" class="icon" /><span>Sair</span>
       </li>
-
     </ul>
   </div>
 </template>

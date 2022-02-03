@@ -44,12 +44,12 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import { mapActions } from "vuex";
 export default {
   name: "Header",
-  methods:{
-    ...mapActions(['toggleMenu'])
-  }
+  methods: {
+    ...mapActions(["toggleMenu"]),
+  },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

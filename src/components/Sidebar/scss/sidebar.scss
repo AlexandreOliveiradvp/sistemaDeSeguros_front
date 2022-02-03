@@ -3,7 +3,7 @@
   background-color: #394154;
   width: 14%;
   transition: 500ms;
-  @media screen and (min-width:1480px) {
+  @media screen and (min-width: 1480px) {
     width: 13%;
   }
   ul {
@@ -62,9 +62,9 @@
     opacity: 0;
   }
 }
-.sidebar-collected{
+.sidebar-collected {
   margin-left: -14%;
-  @media screen and (min-width:1480px) {
+  @media screen and (min-width: 1480px) {
     width: 14%;
   }
 }

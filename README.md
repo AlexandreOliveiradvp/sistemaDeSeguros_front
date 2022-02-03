@@ -15,7 +15,7 @@ npm run serve
 ### Run Prettier for all files
 
 ```
-npx prettier --writte .
+npx prettier --write .
 ```
 
 ### Compiles and minifies for production
