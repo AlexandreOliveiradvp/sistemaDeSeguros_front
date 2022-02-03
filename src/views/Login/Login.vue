@@ -8,20 +8,31 @@
         <div class="form-control border-0">
           <div class="mb-3">
             <label class="form-label">Usuário</label>
-            <div>
-              <input ref="inputUsername" type="text" class="form-control" v-bind:class="{ 'is-invalid': invalid }" />
-              <div class="invalid-feedback">{{ msg }}</div>
+            <div class="col-12 input-group">
+              <input
+                ref="inputUsername"
+                type="text"
+                class="form-control col-8"
+                v-bind:class="{ 'is-invalid': invalidUsr }"
+                @click="cleanInfoUsr()"
+              />
+              <div class="invalid-feedback"><span class="invalid">{{ msgUsr }}</span></div>
             </div>
           </div>
 
           <div class="mb-4">
             <label class="form-label">Senha</label>
             <router-link class="link" to="/RecuperarSenha">
-              <label class="link-label">Esqueceu a senha ?</label>
+              <label class="link-label float-end">Esqueceu a senha ?</label>
             </router-link>
-            <div>
-              <input ref="inputPassword" type="password" class="form-control" v-bind:class="{ 'is-invalid': invalid }"/>
-              <div class="invalid-feedback">{{ msg }}</div>
+            <div class="col-12 input-group">
+              <input
+                ref="inputPassword"
+                type="password"
+                class="form-control"
+                v-bind:class="{ 'is-invalid': invalidPsw }"
+                @click="cleanInfoPsw()"
+              />
               <button
                 v-on:click="revealPassword"
                 class="btn btn-outline-secondary"
@@ -30,6 +41,7 @@
                 <fa v-if="eye" icon="eye-slash" class="icon" />
                 <fa v-if="!eye" icon="eye" class="icon" />
               </button>
+              <div class="invalid-feedback"><span class="invalid">{{ msgPsw }}</span></div>
             </div>
           </div>
 
@@ -77,8 +89,10 @@ export default {
     return {
       eye: true,
       d_none_error: true,
-      msg: "",
-      invalid: false,
+      msgUsr: "",
+      msgPsw: "",
+      invalidUsr: false,
+      invalidPsw: false,
     };
   },
   methods: {
@@ -91,10 +105,22 @@ export default {
         this.eye = true;
       }
     },
+    cleanInfoUsr: function (){
+      this.invalidUsr = false;
+      this.msgUsr = '';
+    },
+    cleanInfoPsw: function (){
+      this.invalidPsw = false;
+      this.msgPsw = '';
+    },
     auth(username, password) {
-      if (username == "" || password == "") {
-        this.invalid = true;
-        this.msg = "Preencha o campo acima!";
+      if (username == "") {
+        this.invalidUsr = true;
+        this.msgUsr = "Digite seu usuário!";
+      }
+      if(password == ""){
+        this.invalidPsw = true;
+        this.msgPsw = "Digite sua senha!";
       } else {
         this.axios
           .post(`http://localhost:3000/Auth/${username}/${password}`)
