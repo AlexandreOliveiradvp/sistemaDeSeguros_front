@@ -8,8 +8,9 @@
         <div class="form-control border-0">
           <div class="mb-3">
             <label class="form-label">Usuário</label>
-            <div class="input-group">
-              <input ref="inputUsername" type="text" class="form-control" />
+            <div>
+              <input ref="inputUsername" type="text" class="form-control" v-bind:class="{ 'is-invalid': invalid }" />
+              <div class="invalid-feedback">{{ msg }}</div>
             </div>
           </div>
 
@@ -18,9 +19,9 @@
             <router-link class="link" to="/RecuperarSenha">
               <label class="link-label">Esqueceu a senha ?</label>
             </router-link>
-            <div class="input-group">
-              <input ref="inputPassword" type="password" class="form-control" />
-              <!-- <div class="invalid-feedback">Please provide a valid city.</div> -->
+            <div>
+              <input ref="inputPassword" type="password" class="form-control" v-bind:class="{ 'is-invalid': invalid }"/>
+              <div class="invalid-feedback">{{ msg }}</div>
               <button
                 v-on:click="revealPassword"
                 class="btn btn-outline-secondary"
@@ -77,6 +78,7 @@ export default {
       eye: true,
       d_none_error: true,
       msg: "",
+      invalid: false,
     };
   },
   methods: {
@@ -91,8 +93,8 @@ export default {
     },
     auth(username, password) {
       if (username == "" || password == "") {
-        this.d_none_error = false;
-        this.msg = "Os campos acima devem ser preenchidos!";
+        this.invalid = true;
+        this.msg = "Preencha o campo acima!";
       } else {
         this.axios
           .post(`http://localhost:3000/Auth/${username}/${password}`)
