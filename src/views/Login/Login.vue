@@ -8,18 +8,31 @@
         <div class="form-control border-0">
           <div class="mb-3">
             <label class="form-label">Usuário</label>
-            <div class="input-group">
-              <input type="text" class="form-control" />
+            <div class="col-12 input-group">
+              <input
+                ref="inputUsername"
+                type="text"
+                class="form-control col-8"
+                v-bind:class="{ 'is-invalid': invalidUsr }"
+                @click="cleanInfoUsr()"
+              />
+              <div class="invalid-feedback"><span class="invalid">{{ msgUsr }}</span></div>
             </div>
           </div>
 
           <div class="mb-4">
             <label class="form-label">Senha</label>
             <router-link class="link" to="/RecuperarSenha">
-              <label class="link-label">Esqueceu a senha ?</label>
+              <label class="link-label float-end">Esqueceu a senha ?</label>
             </router-link>
-            <div class="input-group">
-              <input ref="inputPassword" type="password" class="form-control" />
+            <div class="col-12 input-group">
+              <input
+                ref="inputPassword"
+                type="password"
+                class="form-control"
+                v-bind:class="{ 'is-invalid': invalidPsw }"
+                @click="cleanInfoPsw()"
+              />
               <button
                 v-on:click="revealPassword"
                 class="btn btn-outline-secondary"
@@ -28,15 +41,25 @@
                 <fa v-if="eye" icon="eye-slash" class="icon" />
                 <fa v-if="!eye" icon="eye" class="icon" />
               </button>
+              <div class="invalid-feedback"><span class="invalid">{{ msgPsw }}</span></div>
             </div>
           </div>
 
-          <router-link class="link" to="/">
-            <div class="d-grid gap-2 mb-2">
-              <button class="btn btn-primary" type="button">Entrar</button>
-            </div>
-          </router-link>
-          
+          <div class="d-grid gap-2 mb-2">
+            <button
+              @click="
+                auth(
+                  this.$refs.inputUsername.value,
+                  this.$refs.inputPassword.value
+                )
+              "
+              class="btn btn-primary"
+              type="button"
+            >
+              Entrar
+            </button>
+          </div>
+
           <router-link class="link" to="/SolicitarAcesso">
             <div class="d-grid gap-2">
               <button class="btn btn-outline-primary" type="button">
@@ -44,7 +67,14 @@
               </button>
             </div>
           </router-link>
-
+          <div
+            class="alert alert-danger mt-3 text-center"
+            role="alert"
+            ref="error_info"
+            v-bind:class="{ 'd-none': d_none_error }"
+          >
+            {{ msg }}
+          </div>
         </div>
       </div>
       <footer>2022 © Secure Brasil - secure.com.br</footer>
@@ -58,6 +88,11 @@ export default {
   data() {
     return {
       eye: true,
+      d_none_error: true,
+      msgUsr: "",
+      msgPsw: "",
+      invalidUsr: false,
+      invalidPsw: false,
     };
   },
   methods: {
@@ -68,6 +103,36 @@ export default {
       } else {
         this.$refs.inputPassword.type = "password";
         this.eye = true;
+      }
+    },
+    cleanInfoUsr: function (){
+      this.invalidUsr = false;
+      this.msgUsr = '';
+    },
+    cleanInfoPsw: function (){
+      this.invalidPsw = false;
+      this.msgPsw = '';
+    },
+    auth(username, password) {
+      if (username == "") {
+        this.invalidUsr = true;
+        this.msgUsr = "Digite seu usuário!";
+      }
+      if(password == ""){
+        this.invalidPsw = true;
+        this.msgPsw = "Digite sua senha!";
+      } else {
+        this.axios
+          .post(`http://localhost:3000/Auth/${username}/${password}`)
+          .then((response) => {
+            if (response.data.error) {
+              this.d_none_error = false;
+              this.msg = "Tentativa de login inválida!";
+            } else {
+              localStorage.setItem("token", response.data.token);
+              location = "/";
+            }
+          });
       }
     },
   },

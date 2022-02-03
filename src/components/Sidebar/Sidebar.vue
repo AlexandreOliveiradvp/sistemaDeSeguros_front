@@ -1,7 +1,7 @@
 <template>
   <div
     class="container-sidebar"
-    v-bind:class="{ 'sidebar-collected' : collected}"
+    v-bind:class="{ 'sidebar-collected': collected }"
   >
     <!-- Dashboard -->
     <ul class="list-group">
@@ -45,14 +45,12 @@
         </div>
       </transition>
 
-      <router-link class="link" to="/Login">
-        <li class="list-group-item">
-          <fa icon="sign-out-alt" class="icon" /><span>Sair</span>
-        </li>
-      </router-link>
+      <li @click="logout" class="list-group-item">
+        <fa icon="sign-out-alt" class="icon" /><span>Sair</span>
+      </li>
+
     </ul>
   </div>
-  <!-- <button class="btn btn-primary" @click="collectedSidebar">teste</button> -->
 </template>
 
 <script>
@@ -76,13 +74,10 @@ export default {
         this.rotate = false;
       }
     },
-    /* collectedSidebar() {
-      if (this.collected == false) {
-        this.collected = true;
-      } else {
-        this.collected = false;
-      }
-    }, */
+    logout() {
+      localStorage.removeItem("token");
+      location = "/Login";
+    },
   },
 };
 </script>

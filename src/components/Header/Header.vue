@@ -14,7 +14,7 @@
             aria-controls="navbarToggleExternalContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            @click="mudar"
+            @click="toggleMenu"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -48,7 +48,7 @@ import {mapActions} from 'vuex'
 export default {
   name: "Header",
   methods:{
-    ...mapActions(['mudar'])
+    ...mapActions(['toggleMenu'])
   }
 };
 </script>
