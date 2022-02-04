@@ -17,7 +17,7 @@
                 @click="cleanInfoUsr()"
               />
               <div class="invalid-feedback">
-                <span class="invalid">{{ msgUsr }}</span>
+                <span class="invalid">Digite um usuário válido!</span>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@
                 <fa v-if="!eye" icon="eye" class="icon" />
               </button>
               <div class="invalid-feedback">
-                <span class="invalid">{{ msgPsw }}</span>
+                <span class="invalid">Digite uma senha!</span>
               </div>
             </div>
           </div>
@@ -93,8 +93,6 @@ export default {
     return {
       eye: true,
       d_none_error: true,
-      msgUsr: "",
-      msgPsw: "",
       invalidUsr: false,
       invalidPsw: false,
     };
@@ -111,20 +109,18 @@ export default {
     },
     cleanInfoUsr: function () {
       this.invalidUsr = false;
-      this.msgUsr = "";
     },
     cleanInfoPsw: function () {
       this.invalidPsw = false;
-      this.msgPsw = "";
     },
     auth(username, password) {
       if (username == "") {
         this.invalidUsr = true;
-        this.msgUsr = "Digite seu usuário!";
+        this.msgUsr = "Digite um usuário válido!";
       }
       if (password == "") {
         this.invalidPsw = true;
-        this.msgPsw = "Digite sua senha!";
+        this.msgPsw = "Digite uma senha!";
       } else {
         this.axios
           .post(`http://localhost:3000/Auth/${username}/${password}`)
