@@ -3,7 +3,9 @@
     <Header />
     <main class="d-flex">
       <Sidebar />
-      <router-view />
+      <div class="main">
+        <router-view />
+      </div>
     </main>
   </div>
 </template>
@@ -20,3 +22,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+div.main{
+  width: 100%;
+}
+</style>
