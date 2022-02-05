@@ -21,6 +21,24 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col mt-3">
+          <div class="card">
+            <div class="card-header"><span class="text-secondary">Lorem Ipsum</span></div>
+            <div class="card-body">
+              <canvas></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col mt-3">
+          <div class="card">
+            <div class="card-header"><span class="text-secondary">Lorem Ipsum</span></div>
+            <div class="card-body">
+              <canvas></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
