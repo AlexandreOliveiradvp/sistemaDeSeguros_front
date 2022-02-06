@@ -3,13 +3,13 @@
     <div class="main-container">
       <div class="row">
         <div class="col">
-          <h1 class="text-secondary pt-1">Dashboard</h1>
+          <h1 class="text-secondary pt-2">Dashboard</h1>
         </div>
       </div>
       <div class="row">
         <div class="col mt-3">
           <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-white">
               <span class="text-secondary">Lorem Ipsum</span>
             </div>
             <div class="card-body">
@@ -28,8 +28,8 @@
       <div class="row">
         <div class="col mt-3">
           <div class="card">
-            <div class="card-header">
-              <span class="text-secondary">Lorem Ipsum</span>
+            <div class="card-header bg-white">
+              <span class="text-secondary">Faturamento Anual</span>
             </div>
             <div class="card-body">
               <BarChart :chartData="barData" />
@@ -38,8 +38,8 @@
         </div>
         <div class="col mt-3">
           <div class="card">
-            <div class="card-header">
-              <span class="text-secondary">Lorem Ipsum</span>
+            <div class="card-header bg-white">
+              <span class="text-secondary">Contratos Ativos</span>
             </div>
             <div class="card-body">
               <LineChart :chartData="lineData" />
@@ -63,34 +63,34 @@ export default defineComponent({
   components: { BarChart, LineChart },
   setup() {
     const barData = {
-      labels: ["Paris", "Nova York", "Madri", "Londres", "Lisboa"],
+      labels: ["Minas Gerais", "Rio de Janeiro", "Paraná", "São Paulo", "Pernanbuco"],
       datasets: [
         {
-          label: "Faturamento",
-          data: [45, 60, 30, 70, 20],
+          label: "Ano Base: 2021 / Faturamento em milhões",
+          data: [10, 30, 12, 39, 8],
           backgroundColor: [
-            "#77CEFF",
-            "#0079AF",
-            "#123E6B",
-            "#97B0C4",
-            "#A5C8ED",
+            "#28BBB8",
+            "#A447E6",
+            "#30E6E2",
+            "#E66319",
+            "#CFE625",
           ],
           hoverOffset: 8,
         },
       ],
     };
     const lineData = {
-      labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
+      labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio","Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
       datasets: [
         {
-          label: "Contratos",
-          data: [10, 20, 50, 45, 60],
+          label: "Ano Base: 2021",
+          data: [5, 9, 9, 9, 11, 12, 12, 13, 11, 10, 11, 14],
           backgroundColor: [
-            "#77CEFF",
-            "#0079AF",
-            "#123E6B",
-            "#97B0C4",
-            "#A5C8ED",
+            "#28BBB8",
+            "#A447E6",
+            "#30E6E2",
+            "#E66319",
+            "#CFE625",
           ],
           hoverOffset: 8,
         },
