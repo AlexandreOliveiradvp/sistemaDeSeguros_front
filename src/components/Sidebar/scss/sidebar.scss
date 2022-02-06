@@ -1,5 +1,5 @@
 .container-sidebar {
-  height: calc(100vh - 62px);
+  min-height: calc(100vh - 62px);
   background-color: #394154;
   width: 14%;
   transition: 500ms;
