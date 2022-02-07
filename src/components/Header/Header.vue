@@ -1,9 +1,6 @@
 <template>
   <header>
-    <nav
-      class="navbar navbar-light bg-light"
-      style="z-index: 2; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)"
-    >
+    <nav class="navbar navbar-light bg-light nav-bar-container">
       <div class="container-fluid">
         <div>
           <button
@@ -18,20 +15,22 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" style="margin-left: 20px" href="home">
+          <a class="navbar-brand link-logo" href="home">
             <img width="150" src="../../assets/logo.png" class="nav-logo" />
           </a>
         </div>
 
-        <div style="display: flex; text-align: end">
+        <div class="d-flex text-end">
           <div>
             <div>
-              <span class="bem-vindo"> Bem Vindo, </span>
-              <span class="account-user-name">{{ username }}</span>
+
+              <span class="bem-vindo text-secondary"> Bem vindo, </span>
+              <span class="account-user-name"> {{ username }} </span>
             </div>
             <div class="acesso-info">
-              <span> Acessado em : </span>
-              <span style="color: #eeb667"> {{ accessIn }} </span>
+              <span class="text-secondary"> Acessado em : </span>
+              <span class="span-date"> {{ accessIn }} </span>
+
             </div>
           </div>
           <span>

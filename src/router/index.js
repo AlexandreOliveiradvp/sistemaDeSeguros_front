@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "../../node_modules/vue-router";
 import Dashboard from "../views/Dashboard/Dashboard.vue";
-import Clientes from "../views/Clients/Clients.vue";
+import Clients from "../views/Clients/Clients.vue";
 import Login from "../views/Login/Login.vue";
 import NotFound from "../views/404/404.vue";
 import Home from "../views/Home.vue";
 import PasswordRecover from "../views/Password_Recovery/Password_Recovery.vue";
 import RequestAccess from "../views/Request_Access/Request_Access.vue";
+import RegisterClients from "../views/Clients/RegisterClients.vue";
 
 var auth = localStorage.getItem("token") != null;
 
@@ -22,8 +23,13 @@ const routes = [
       },
       {
         path: "/Clientes",
-        name: "Clientes",
-        component: Clientes,
+        name: "Clients",
+        component: Clients,
+      },
+      {
+        path: "/CadastrarClientes",
+        name: "RegisterClients",
+        component: RegisterClients,
       },
     ],
     beforeEnter(to, from, next) {

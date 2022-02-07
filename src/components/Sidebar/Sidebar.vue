@@ -4,7 +4,7 @@
     v-bind:class="{ 'sidebar-collected': collected }"
   >
     <!-- Dashboard -->
-    <ul class="list-group">
+    <ul class="list-group pt-2">
       <router-link class="link" to="/"
         ><li class="list-group-item">
           <fa icon="chart-line" class="icon" /><span>Dashboard</span>
