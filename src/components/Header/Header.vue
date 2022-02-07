@@ -23,12 +23,14 @@
         <div class="d-flex text-end">
           <div>
             <div>
+
               <span class="bem-vindo text-secondary"> Bem vindo, </span>
-              <span class="account-user-name"> Fernando Souza </span>
+              <span class="account-user-name"> {{ username }} </span>
             </div>
             <div class="acesso-info">
               <span class="text-secondary"> Acessado em : </span>
-              <span class="span-date"> 09/01/2022 </span>
+              <span class="span-date"> {{ accessIn }} </span>
+
             </div>
           </div>
           <span>
@@ -44,6 +46,12 @@
 import { mapActions } from "vuex";
 export default {
   name: "Header",
+  data() {
+    return {
+      username: localStorage.getItem("userName"),
+      accessIn: localStorage.getItem("accessIn")
+    }
+  },
   methods: {
     ...mapActions(["toggleMenu"]),
   },
