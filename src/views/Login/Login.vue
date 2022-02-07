@@ -98,6 +98,8 @@ export default {
               this.msg = "Tentativa de login inválida!";
             } else {
               localStorage.setItem("token", response.data.token);
+              localStorage.setItem("userName", response.data.userInfo.name)
+              localStorage.setItem("accessIn", response.data.userInfo.nowDate)
               location = "/";
             }
           });
