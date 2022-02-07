@@ -27,11 +27,11 @@
           <div>
             <div>
               <span class="bem-vindo"> Bem Vindo, </span>
-              <span class="account-user-name"> Fernando Souza </span>
+              <span class="account-user-name">{{ username }}</span>
             </div>
             <div class="acesso-info">
               <span> Acessado em : </span>
-              <span style="color: #eeb667"> 09/01/2022 </span>
+              <span style="color: #eeb667"> {{ accessIn }} </span>
             </div>
           </div>
           <span>
@@ -47,6 +47,12 @@
 import { mapActions } from "vuex";
 export default {
   name: "Header",
+  data() {
+    return {
+      username: localStorage.getItem("userName"),
+      accessIn: localStorage.getItem("accessIn")
+    }
+  },
   methods: {
     ...mapActions(["toggleMenu"]),
   },
