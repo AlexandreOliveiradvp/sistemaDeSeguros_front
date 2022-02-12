@@ -4,9 +4,9 @@ div.main-container{
     @media screen and (min-width: 1600px) {
         width: 1380px;
     }
-}
-div.main-container h1{
-    font-size: 2rem;
+    h1{
+        font-size: 2rem;
+    }
 }
 .link{
     text-decoration: none;
@@ -30,4 +30,7 @@ button.btn-clients{
     &:hover{
         background-color: #e99521;
     }
+}
+.label-input{
+    font-size: 0.9rem;
 }
