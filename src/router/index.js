@@ -7,6 +7,10 @@ import Home from "../views/Home.vue";
 import PasswordRecover from "../views/Password_Recovery/Password_Recovery.vue";
 import RequestAccess from "../views/Request_Access/Request_Access.vue";
 import RegisterClients from "../views/Clients/RegisterClients.vue";
+import Operators from "../views/Operators/Operators.vue";
+import RegisterOperators from "../views/Operators/RegisterOperators.vue";
+import Users from "../views/Users/Users.vue";
+import RegisterUsers from "../views/Users/RegisterUsers.vue";
 
 var auth = localStorage.getItem("token") != null;
 
@@ -30,6 +34,26 @@ const routes = [
         path: "/CadastrarClientes",
         name: "RegisterClients",
         component: RegisterClients,
+      },
+      {
+        path: "/Operadoras",
+        name: "Operators",
+        component: Operators,
+      },
+      {
+        path: "/CadastrarOperadoras",
+        name: "RegisterOperators",
+        component: RegisterOperators,
+      },
+      {
+        path: "/Usuarios",
+        name: "Users",
+        component: Users,
+      },
+      {
+        path: "/CadastrarUsuarios",
+        name: "RegisterUsers",
+        component: RegisterUsers,
       },
     ],
     beforeEnter(to, from, next) {
