@@ -18,6 +18,7 @@ import {
   faChevronDown,
   faEyeSlash,
   faEye,
+  faTable
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -31,7 +32,8 @@ library.add(
   faArrowRight,
   faChevronDown,
   faEyeSlash,
-  faEye
+  faEye,
+  faTable
 );
 
 createApp(App)

@@ -25,96 +25,98 @@
       <div class="row">
         <div class="col">
           <div class="card mt-2">
-            <div class="card-header bg-white text-secondary">Dados Usuário</div>
+            <div class="card-header bg-white text-secondary"><fa icon="table"/><span class="ps-1">Dados do Clientes</span></div>
             <div class="card-body">
               <div class="col-12 d-flex">
-                <div class="col-md-12 col-lg-3 pe-2">
+                <div class="col-md-12 col-lg-4 pe-2">
                   <label class="form-label label-input text-secondary"
                     >Razão Social:</label
                   >
-                  <div class="input-group mb-3">
+                  <div class="mb-3">
                     <input
                       type="text"
                       class="form-control form-control-sm"
                       placeholder="Digite a razão social"
                       ref="inputSocialReason"
                     />
-                  </div>
-                  <div class="invalid-feedback">
-                    <span class="invalid">Digite a Razão Social!</span>
+                    <div class="invalid-feedback">
+                      <span class="invalid">Digite a Razão Social!</span>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-12 col-lg-3 ps-2 pe-2">
+                <div class="col-md-12 col-lg-4 ps-2 pe-2">
                   <label class="form-label label-input text-secondary"
                     >Nome Fantasia:</label
                   >
-                  <div class="input-group mb-3">
+                  <div class="mb-3">
                     <input
                       type="text"
                       class="form-control form-control-sm"
                       placeholder="Digite o nome fantasia"
                       ref="inputFantasyName"
                     />
-                  </div>
-                  <div class="invalid-feedback">
-                    <span class="invalid">Digite o nome fantasia!</span>
+                    <div class="invalid-feedback">
+                      <span class="invalid">Digite o nome fantasia!</span>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-12 col-lg-3 ps-2 pe-2">
+                <div class="col-md-12 col-lg-4 ps-2 pe-2">
                   <label class="form-label label-input text-secondary"
                     >Telefone:</label
                   >
-                  <div class="input-group mb-3">
+                  <div class="mb-3">
                     <input
                       type="text"
                       class="form-control form-control-sm"
                       placeholder="Digite o telefone"
                       ref="inputPhone"
+                      @keyup="mask()"
+                      maxlength="14"
                     />
-                  </div>
-                  <div class="invalid-feedback">
-                    <span class="invalid">Digite o telefone!</span>
+                    <div class="invalid-feedback">
+                      <span class="invalid">Digite o telefone!</span>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-12 col-lg-3 ps-2">
+              </div>
+              <div class="col-12 d-flex">
+                <div class="col-md-12 col-lg-4 pe-2">
                   <label class="form-label label-input text-secondary"
                     >Email:</label
                   >
-                  <div class="input-group mb-3">
+                  <div class="mb-3">
                     <input
                       type="text"
                       class="form-control form-control-sm"
                       placeholder="Digite o email"
                       ref="inputEmail"
                     />
-                  </div>
-                  <div class="invalid-feedback">
-                    <span class="invalid">Digite o email!</span>
+                    <div class="invalid-feedback">
+                      <span class="invalid">Digite o email!</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 d-flex">
-                <div class="col-md-12 col-lg-3 pe-2">
+                <div class="col-md-12 col-lg-4 pe-2 ps-2">
                   <label class="form-label label-input text-secondary"
                     >CNPJ:</label
                   >
-                  <div class="input-group mb-3">
+                  <div class="mb-3">
                     <input
                       type="text"
                       class="form-control form-control-sm"
                       placeholder="Digite o CNPJ"
                       ref="inputCnpj"
                     />
-                  </div>
-                  <div class="invalid-feedback">
-                    <span class="invalid">Digite o CNPJ!</span>
+                    <div class="invalid-feedback">
+                      <span class="invalid">Digite o CNPJ!</span>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-12 col-lg-2 ps-2 pe-2">
                   <label class="form-label label-input text-secondary"
-                    >Número Funcionario:</label
+                    >Número Funcionários:</label
                   >
-                  <div class="input-group mb-3">
+                  <div class="mb-3">
                     <input
                       type="number"
                       class="form-control form-control-sm"
@@ -122,11 +124,11 @@
                       max="5000"
                       ref="inputNumberEmployees"
                     />
-                  </div>
-                  <div class="invalid-feedback">
-                    <span class="invalid"
-                      >Informe o número de funcionários!</span
-                    >
+                    <div class="invalid-feedback">
+                      <span class="invalid">
+                        Informe o número de funcionários!
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -172,10 +174,18 @@ export default {
         if (this.$refs.inputNumberEmployees.value == "") {
           this.$refs.inputNumberEmployees.classList.add("is-invalid");
         }
+      } else {
+        alert("submeteu formulário!");
       }
-      else{
-        alert ('submeteu formulário!');
-      }
+    },
+    mask: function () {
+      var v = this.$refs.inputPhone.value;
+
+      v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
+      v = v.replace(/^(\d\d)(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+      v = v.replace(/(\d{4})(\d)/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+
+      this.$refs.inputPhone.value = v;
     },
   },
 };
