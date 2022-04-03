@@ -8,7 +8,7 @@
         <div class="form-control border-0">
           <div class="mb-3">
             <label class="form-label">Usuário</label>
-            <div class="col-12 input-group">
+            <div class="col-12">
               <input ref="inputUsername" type="text" class="form-control col-8" v-bind:class="{ 'is-invalid': invalidUsr }" @click="cleanInfoUsr()"/>
               <div class="invalid-feedback">
                 <span class="invalid">Digite um usuário válido!</span>

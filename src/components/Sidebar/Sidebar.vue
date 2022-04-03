@@ -34,14 +34,16 @@
               <span>Clientes</span>
             </li>
           </router-link>
-
+        <router-link class="link" to="/Operadoras">
           <li class="list-group-item ps-4">
             <span>Operadoras</span>
           </li>
-
+        </router-link>
+        <router-link class="link" to="/Usuarios">
           <li class="list-group-item ps-4">
             <span>Usuários</span>
           </li>
+        </router-link>
         </div>
       </transition>
 
