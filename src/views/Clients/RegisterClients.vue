@@ -35,7 +35,7 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite a razão social"
                       ref="inputSocialReason"
                     />
@@ -51,7 +51,7 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite o nome fantasia"
                       ref="inputFantasyName"
                     />
@@ -67,8 +67,8 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
-                      placeholder="Digite o telefone"
+                      class="form-control form-control-sm input-text"
+                      placeholder="(12)1234-5678"
                       ref="inputPhone"
                       maxlength="14"
                       v-mask="'(##)####-####'"
@@ -87,8 +87,8 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
-                      placeholder="Digite o email"
+                      class="form-control form-control-sm input-text"
+                      placeholder="email@email.com.br"
                       ref="inputEmail"
                     />
                     <div class="invalid-feedback">
@@ -103,8 +103,8 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
-                      placeholder="Digite o CNPJ"
+                      class="form-control form-control-sm input-text"
+                      placeholder="12.345.678/1234-56"
                       ref="inputCnpj"
                       v-mask="'##.###.###/####-##'"
                     />

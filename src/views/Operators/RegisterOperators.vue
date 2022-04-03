@@ -31,7 +31,7 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite a razão social"
                       ref="inputFantasyName"
                     />
@@ -47,7 +47,7 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite o nome fantasia"
                       ref="inputPhone"
                       v-mask="'(##)####-####'"
@@ -64,7 +64,7 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite o nome fantasia"
                       ref="inputEmail"
                     />
@@ -75,14 +75,14 @@
                 </div>
               </div>
               <div class="col-12 d-flex">  
-                <div class="col-md-12 col-lg-4 ps-2 pe-2">
+                <div class="col-md-12 col-lg-4 pe-2">
                   <label class="form-label label-input text-secondary"
                     >CNPJ:</label
                   >
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite o nome fantasia"
                       ref="inputCnpj"
                       v-mask="'##.###.###/####-##'"
@@ -99,7 +99,7 @@
                   <div class="mb-3">
                     <input
                       type="text"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm input-text"
                       placeholder="Digite o nome fantasia"
                       ref="inputSocialReason"
                     />

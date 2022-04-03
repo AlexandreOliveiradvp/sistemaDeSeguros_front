@@ -31,3 +31,12 @@ button.btn-clients{
         background-color: var(--secondaryColor);
     }
 }
+.label-input{
+    font-size: 0.9rem;
+}
+.input-text{
+    color: var(--text);
+}
+.input-text::placeholder{
+    color: var(--textPlaceholder);
+}
