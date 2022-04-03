@@ -6,6 +6,7 @@ import router from "./router";
 import store from "./store";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import VueTheMask from 'vue-the-mask'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -41,5 +42,6 @@ createApp(App)
   .component("fa", FontAwesomeIcon)
   .use(router)
   .use(store)
+  .use(VueTheMask)
   .use(VueAxios, axios)
   .mount("#app");

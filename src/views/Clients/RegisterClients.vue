@@ -70,8 +70,8 @@
                       class="form-control form-control-sm"
                       placeholder="Digite o telefone"
                       ref="inputPhone"
-                      @keyup="mask()"
                       maxlength="14"
+                      v-mask="'(##)####-####'"
                     />
                     <div class="invalid-feedback">
                       <span class="invalid">Digite o telefone!</span>
@@ -106,6 +106,7 @@
                       class="form-control form-control-sm"
                       placeholder="Digite o CNPJ"
                       ref="inputCnpj"
+                      v-mask="'##.###.###/####-##'"
                     />
                     <div class="invalid-feedback">
                       <span class="invalid">Digite o CNPJ!</span>
@@ -174,26 +175,17 @@ export default {
         if (this.$refs.inputNumberEmployees.value == "") {
           this.$refs.inputNumberEmployees.classList.add("is-invalid");
         }
-        this.$refs.inputSocialReason.addEventListener('change',this.ClearIvalid);
-        this.$refs.inputFantasyName.addEventListener('change',this.ClearIvalid);
-        this.$refs.inputPhone.addEventListener('change',this.ClearIvalid);
-        this.$refs.inputEmail.addEventListener('change',this.ClearIvalid);
-        this.$refs.inputCnpj.addEventListener('change',this.ClearIvalid);
-        this.$refs.inputNumberEmployees.addEventListener('change',this.ClearIvalid);
+        this.$refs.inputSocialReason.addEventListener('change',this.CleanIvalid);
+        this.$refs.inputFantasyName.addEventListener('change',this.CleanIvalid);
+        this.$refs.inputPhone.addEventListener('change',this.CleanIvalid);
+        this.$refs.inputEmail.addEventListener('change',this.CleanIvalid);
+        this.$refs.inputCnpj.addEventListener('change',this.CleanIvalid);
+        this.$refs.inputNumberEmployees.addEventListener('change',this.CleanIvalid);
       } else {
         alert("submeteu formulário!");
       }
     },
-    mask: function () {
-      var v = this.$refs.inputPhone.value;
-
-      v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
-      v = v.replace(/^(\d\d)(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-      v = v.replace(/(\d{4})(\d)/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
-
-      this.$refs.inputPhone.value = v;
-    },
-    ClearIvalid: function (){
+    CleanIvalid: function (){
       if (this.$refs.inputSocialReason.value != "") {
           this.$refs.inputSocialReason.classList.remove("is-invalid");
         }
