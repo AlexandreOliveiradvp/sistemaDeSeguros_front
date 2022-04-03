@@ -16,7 +16,7 @@ div.main-container{
     padding-left: 2px;
     transition: 200ms;
     &:hover{
-        color: #575555 !important;
+        color: var(--textHover) !important;
     }
 }
 p.arrow-link{
@@ -24,11 +24,11 @@ p.arrow-link{
     margin: 0 6px;
 }
 button.btn-clients{
-    background-color: #e7a84f;
+    background-color: var(--btnAction);
     color: white;
     margin-top: 35px;
     &:hover{
-        background-color: #e99521;
+        background-color: var(--secondaryColor);
     }
 }
 .label-input{

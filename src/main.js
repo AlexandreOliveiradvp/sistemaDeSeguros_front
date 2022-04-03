@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./resources/scss/variablesStyles.scss";
 import router from "./router";
 import store from "./store";
 import axios from "axios";

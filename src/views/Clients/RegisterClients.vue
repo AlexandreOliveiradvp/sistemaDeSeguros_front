@@ -174,6 +174,12 @@ export default {
         if (this.$refs.inputNumberEmployees.value == "") {
           this.$refs.inputNumberEmployees.classList.add("is-invalid");
         }
+        this.$refs.inputSocialReason.addEventListener('change',this.ClearIvalid);
+        this.$refs.inputFantasyName.addEventListener('change',this.ClearIvalid);
+        this.$refs.inputPhone.addEventListener('change',this.ClearIvalid);
+        this.$refs.inputEmail.addEventListener('change',this.ClearIvalid);
+        this.$refs.inputCnpj.addEventListener('change',this.ClearIvalid);
+        this.$refs.inputNumberEmployees.addEventListener('change',this.ClearIvalid);
       } else {
         alert("submeteu formulário!");
       }
@@ -187,6 +193,26 @@ export default {
 
       this.$refs.inputPhone.value = v;
     },
+    ClearIvalid: function (){
+      if (this.$refs.inputSocialReason.value != "") {
+          this.$refs.inputSocialReason.classList.remove("is-invalid");
+        }
+      if (this.$refs.inputFantasyName.value != "") {
+          this.$refs.inputFantasyName.classList.remove("is-invalid");
+        }
+      if (this.$refs.inputPhone.value != "") {
+          this.$refs.inputPhone.classList.remove("is-invalid");
+        }  
+      if (this.$refs.inputEmail.value != "") {
+          this.$refs.inputEmail.classList.remove("is-invalid");
+        }
+      if (this.$refs.inputCnpj.value != "") {
+          this.$refs.inputCnpj.classList.remove("is-invalid");
+        }
+      if (this.$refs.inputNumberEmployees.value != "") {
+          this.$refs.inputNumberEmployees.classList.remove("is-invalid");
+        }
+    }
   },
 };
 </script>
