@@ -57,9 +57,9 @@
 <script>
 export default {
   name: "Clients",
-  mounted(){
+  /* mounted(){
     let table = new DataTable('#example');
-  }
+  } */
 };
 </script>
 <style scoped lang="scss" src="./scss/Clients.scss"></style>
