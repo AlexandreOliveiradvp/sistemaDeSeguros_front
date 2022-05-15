@@ -16,35 +16,17 @@
         <div class="col">
           <table id="example" class="display table" style="width:100%">
             <thead>
-                        <tr>
-                            <th>Razão Social</th>
-                            <th>Segmento</th>
-                            <th>CNPJ</th>
-                            <th>Data de Cadastro</th>
-                            <th>Status</th>
-                            <th>Teste</th>
-                        </tr>
-                    </thead>
+              <tr>
+                <th>Nome Fantasia</th>
+                <th>CNPJ</th>
+                <th>Email</th>
+              </tr>
+            </thead>
              <tbody>
-               <tr>
-                 <td>
-                   picas
-                 </td>
-                 <td>
-                   picas
-                 </td>
-                 <td>
-                   picas
-                 </td>
-                 <td>
-                   picas
-                 </td>
-                 <td>
-                   picas
-                 </td>
-                 <td>
-                   picas
-                 </td>
+               <tr v-for="client in clients" v-bind:key="client.Id">
+                 <td>{{ client.FantasyName }}</td>
+                 <td>{{ client.CNPJ }}</td>
+                 <td>{{ client.Email }}</td>
                </tr>
              </tbody>
           </table>
@@ -57,9 +39,24 @@
 <script>
 export default {
   name: "Clients",
-  /* mounted(){
-    let table = new DataTable('#example');
-  } */
+  data() {
+    return {
+      clients:[]
+    }
+  },
+  mounted(){
+    this.getData();
+  },
+  methods: {
+    async getData(){
+      await this.axios
+        .get(`http://localhost:3000/Client/${localStorage.getItem("token")}`)
+        .then((response) => {
+          this.clients = response.data.result;
+        });
+      let table = new DataTable('#example');
+    }
+  }
 };
 </script>
 <style scoped lang="scss" src="./scss/Clients.scss"></style>

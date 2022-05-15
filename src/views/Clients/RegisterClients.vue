@@ -25,7 +25,9 @@
       <div class="row">
         <div class="col">
           <div class="card mt-2">
-            <div class="card-header bg-white text-secondary"><fa icon="table"/><span class="ps-1">Dados do Clientes</span></div>
+            <div class="card-header bg-white text-secondary">
+              <fa icon="table" /><span class="ps-1">Dados do Clientes</span>
+            </div>
             <div class="card-body">
               <div class="col-12 d-flex">
                 <div class="col-md-12 col-lg-4 pe-2">
@@ -155,7 +157,7 @@ export default {
         this.$refs.inputPhone.value == "" ||
         this.$refs.inputEmail.value == "" ||
         this.$refs.inputCnpj.value == "" ||
-        this.$refs.inputCnpj.value == ""
+        this.$refs.inputNumberEmployees.value == ""
       ) {
         if (this.$refs.inputSocialReason.value == "") {
           this.$refs.inputSocialReason.classList.add("is-invalid");
@@ -182,7 +184,29 @@ export default {
         this.$refs.inputCnpj.addEventListener('change',this.CleanIvalid);
         this.$refs.inputNumberEmployees.addEventListener('change',this.CleanIvalid);
       } else {
-        alert("submeteu formulário!");
+
+        let config = {
+          headers: {
+            SocialReason: this.$refs.inputSocialReason.value,
+            FantasyName: this.$refs.inputFantasyName.value,
+            Phone: this.$refs.inputPhone.value,
+            Email: this.$refs.inputEmail.value,
+            CNPJ: this.$refs.inputCnpj.value,
+            NumberEmployees: this.$refs.inputNumberEmployees.value
+          }
+        }
+
+        let data = {}
+
+        this.axios.post(
+          `http://localhost:3000/NewClient/${localStorage.getItem("token")}`,
+          data, 
+          config
+        )
+          .then((response) => {
+            !response.data.result.error ? alert("Usuario Cadastrado com sucesso.") : alert("Erro ao cadastrar.")
+          });
+
       }
     },
     CleanIvalid: function (){
